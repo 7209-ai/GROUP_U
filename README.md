@@ -58,6 +58,7 @@ The RAG-powered Tutor provides context-grounded explanations and citations from 
 | **Dataset Sources**     | Open Textbook Dataset, TED Talks Dataset            |
 
 #Detailed Flow Diagram
+'''
                     ┌──────────────────────────┐
                     │     Upload Lecture       │
                     │  (PDF / Transcript / Doc)│
@@ -94,6 +95,8 @@ The RAG-powered Tutor provides context-grounded explanations and citations from 
                      │   Frontend Interface   │
                      │ (Flask / Streamlit UI) │
                      └────────────────────────┘
+
+'''
 
 # Gen AI Components
 
