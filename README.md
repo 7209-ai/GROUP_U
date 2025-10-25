@@ -57,46 +57,21 @@ The RAG-powered Tutor provides context-grounded explanations and citations from 
 | **Visualization / UI**  | HTML, CSS (optional dashboard)                      |
 | **Dataset Sources**     | Open Textbook Dataset, TED Talks Dataset            |
 
-#Detailed Flow Diagram
-'''
-                    ┌──────────────────────────┐
-                    │     Upload Lecture       │
-                    │  (PDF / Transcript / Doc)│
-                    └────────────┬─────────────┘
-                                 │
-                     ┌───────────▼────────────┐
-                     │   Text Chunking &      │
-                     │    Preprocessing       │
-                     └───────────┬────────────┘
-                                 │
-                     ┌───────────▼────────────┐
-                     │   Embedding Generator  │
-                     │ (OpenAI/HF Model)      │
-                     └───────────┬────────────┘
-                                 │
-                     ┌───────────▼────────────┐
-                     │     Vector Store       │
-                     │      (ChromaDB)        │
-                     └───────────┬────────────┘
-                 ┌───────────────┼─────────────────┐
-                 │               │                 │
-      ┌──────────▼───────────┐   │     ┌───────────▼──────────┐
-      │ Summarization Module │   │     │    RAG Q&A Module     │
-      └──────────┬───────────┘   │     └───────────┬──────────┘
-                 │               │                 │
-     ┌───────────▼──────────┐    │     ┌───────────▼───────────┐
-     │  Quiz Generation     │    │     │   LLM (GPT / Gemini)  │
-     │  (5 MCQs + Answers)  │    │     │ Generates Final Output │
-     └───────────┬──────────┘    │     └───────────┬───────────┘
-                 │               │                 │
-                 └───────────────┴─────────────────┘
-                                 │
-                     ┌───────────▼────────────┐
-                     │   Frontend Interface   │
-                     │ (Flask / Streamlit UI) │
-                     └────────────────────────┘
 
-'''
+## Detailed Flow Diagram
+
+```mermaid
+flowchart TD
+    A[Upload Lecture<br>(PDF / Transcript / Doc)] --> B[Text Chunking & Preprocessing]
+    B --> C[Embedding Generator<br>(OpenAI / HF Model)]
+    C --> D[Vector Store<br>(ChromaDB)]
+    D --> E1[Summarization Module]
+    D --> E2[RAG Q&A Module]
+    E1 --> F[LLM (GPT / Gemini)<br>Generates Final Output]
+    E2 --> F
+    F --> G1[Quiz Generation<br>(5 MCQs + Answers)]
+    F --> G2[Frontend Interface<br>(Flask / Streamlit UI)]
+```
 
 # Gen AI Components
 
