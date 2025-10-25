@@ -1,25 +1,25 @@
-#Problem Statement
+# Problem Statement
 
 In the modern education system, students often face two major challenges:
 Difficulty in understanding and retaining key lecture content.
 Lack of instant, reliable support to clarify academic doubts and reinforce learning.
 Traditional classroom setups and online courses provide abundant information, but not personalized understanding. Students need an interactive AI assistant that helps them grasp, review, and test knowledge efficiently.
 
-#Proposed Solution
+# Proposed Solution
 
 EduMentor is an AI-powered educational assistant that combines:
 Lecture Summarization & Quiz Generation – Summarizes uploaded lecture transcripts or notes and automatically generates 5-question MCQs for revision.
 AI Tutor Chatbot – Acts as a knowledge-aware chatbot that answers academic questions based on textbooks, lecture data, or uploaded materials.
 Together, these features create a personalized, retrieval-augmented learning experience powered by RAG (Retrieval-Augmented Generation) and LLMs (Large Language Models).
 
-#Key Features
+# Key Features
 
 Generate structured summaries with key insights.
 Auto-create MCQ quizzes for quick revision and testing.
 Ask subject-specific questions via the AI Tutor and receive precise answers with cited sources.
 Built using RAG pipeline for context-grounded responses and LLM for natural text generation.
 
-#Tech Stack
+# Tech Stack
 
 | Layer                   | Tools / Technologies                                |
 | ----------------------- | --------------------------------------------------- |
@@ -30,28 +30,28 @@ Built using RAG pipeline for context-grounded responses and LLM for natural text
 | **Embeddings**          | `text-embedding-3-small` or `sentence-transformers` |
 | **Data Processing**     | Pandas, NumPy                                       |
 
-#System Architecture
+# System Architecture
 
-##1. Data Ingestion
+## 1. Data Ingestion
 Input lecture transcripts, textbook chapters, or notes.
 Data is chunked into small text blocks for efficient retrieval.
 
-##2. Embedding & Storage
+## 2. Embedding & Storage
 Each text chunk is converted into an embedding vector using OpenAI or HuggingFace models.
 Stored in ChromaDB for similarity-based retrieval.
 
-##3. RAG Pipeline
+## 3. RAG Pipeline
 On receiving a query, similar chunks are retrieved from the vector store.
 These are passed to an LLM (e.g., GPT or Gemini) to generate a factual, contextual answer.
 
-##4. Lecture Summarization
+## 4. Lecture Summarization
 The same data pipeline is used to create summaries of uploaded lectures.
 Extracts key concepts, learning objectives, and core ideas.
 
-##5. Quiz Generation
+## 5. Quiz Generation
 The LLM processes summarized text and creates 5 multiple-choice questions with correct answer keys.
 
-##6. Interactive Chat
+## 6. Interactive Chat
 Users can ask questions related to the uploaded content.
 The RAG-powered Tutor provides context-grounded explanations and citations from retrieved text.
 | **Visualization / UI**  | HTML, CSS (optional dashboard)                      |
@@ -95,7 +95,7 @@ The RAG-powered Tutor provides context-grounded explanations and citations from 
                      │ (Flask / Streamlit UI) │
                      └────────────────────────┘
 
-#Gen AI Components
+# Gen AI Components
 
 | Component                                | Description                                                                 |
 | ---------------------------------------- | --------------------------------------------------------------------------- |
@@ -105,7 +105,7 @@ The RAG-powered Tutor provides context-grounded explanations and citations from 
 | **ChromaDB / FAISS**                     | Stores and retrieves relevant content chunks efficiently.                   |
 | **LangChain**                            | Manages the workflow between embedding, retrieval, and generation.          |
 
-#Workflow Summary
+# Workflow Summary
 
 Upload lecture transcript → Text chunking → Embedding creation.
 Store in ChromaDB for semantic retrieval.
@@ -114,17 +114,17 @@ LLM generates contextual answers or summaries.
 Quiz generator uses summarized text to form evaluation questions.
 Students can interact with the AI Tutor for deeper understanding.
 
-#Expected Outcomes
-##Personalized Learning Support:
+# Expected Outcomes
+## Personalized Learning Support:
 Students can review content efficiently.
-##Instant Academic Help: 
+## Instant Academic Help: 
 RAG chatbot answers questions based on real content.
-##Assessment Integration: 
+## Assessment Integration: 
 Quizzes allow self-evaluation after each session.
-##Educational Research Aid: 
+## Educational Research Aid: 
 Facilitates faster topic exploration and comprehension.
 
-#Future Scope
+# Future Scope
 
 Integration with LMS (Learning Management Systems).
 Addition of speech-to-text for real-time lecture summarization.
