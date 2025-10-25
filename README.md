@@ -62,15 +62,16 @@ The RAG-powered Tutor provides context-grounded explanations and citations from 
 
 ```mermaid
 flowchart TD
-    A[Upload Lecture<br>(PDF / Transcript / Doc)] --> B[Text Chunking & Preprocessing]
-    B --> C[Embedding Generator<br>(OpenAI / HF Model)]
-    C --> D[Vector Store<br>(ChromaDB)]
+    A[Upload Lecture (PDF / Transcript / Doc)] --> B[Text Chunking & Preprocessing]
+    B --> C[Embedding Generator (OpenAI / HF Model)]
+    C --> D[Vector Store (ChromaDB)]
     D --> E1[Summarization Module]
     D --> E2[RAG Q&A Module]
-    E1 --> F[LLM (GPT / Gemini)<br>Generates Final Output]
+    E1 --> F[LLM (GPT / Gemini) - Generates Final Output]
     E2 --> F
-    F --> G1[Quiz Generation<br>(5 MCQs + Answers)]
-    F --> G2[Frontend Interface<br>(Flask / Streamlit UI)]
+    F --> G[Quiz Generation (5 MCQs + Answers)]
+    F --> H[Frontend Interface (Flask / Streamlit UI)]
+
 ```
 
 # Gen AI Components
